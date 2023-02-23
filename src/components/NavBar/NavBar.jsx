@@ -5,15 +5,19 @@ import "./NavBar.css";
 
 const NavBar = () => {
   return (
-    <div className="nav">
-      <div className="nav-logo">
-        <FaReddit className="reddit-logo" />
-        <p className="whole-logo">
-          <span className="logo">Reddit</span>Minimal
-        </p>
+    <header>
+      <div className="nav">
+        <div className="nav-logo">
+          <FaReddit className="reddit-logo" />
+          <p className="whole-logo">
+            <span className="logo">Reddit</span>Minimal
+          </p>
+        </div>
+        <div className="search-component">
+          <SearchBar />
+        </div>
       </div>
-      <SearchBar />
-    </div>
+    </header>
   );
 };
 

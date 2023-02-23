@@ -1,19 +1,24 @@
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-content: center;
+header {
+  width: 100%;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
   height: 64px;
   padding: 0 15px;
   background-color: #fcfcfc;
 }
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1050px;
+  padding: 0 15px;
+}
 .nav-logo {
   display: flex;
   align-items: center;
 }
 .reddit-logo {
-  color: violet;
+  color: rgb(164, 80, 243);
   width: 32px;
   height: 32px;
   padding: 0 10px;
@@ -22,5 +27,9 @@
   font-weight: 900;
 }
 .logo {
-  color: violet;
+  color: rgb(164, 80, 243);
+}
+
+.search-component {
+  margin-right: 2rem;
 }
