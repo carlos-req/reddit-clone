@@ -1,9 +1,15 @@
 import React from "react";
 import PostCard from "../PostCard/PostCard";
+import "./MainPost.css";
 
 const MainPost = () => {
   return (
-    <div>
+    <div className="postcards">
+      <PostCard />
+      <PostCard />
+      <PostCard />
+      <PostCard />
+      <PostCard />
       <PostCard />
     </div>
   );

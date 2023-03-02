@@ -2,6 +2,13 @@
 :root {
   --primary-font-color: #444;
   --secondary-font-color: #717171;
+  --background-color: #fcfcfc;
+  --foreground-color: #fff;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 body {
   margin: 0px;
@@ -9,15 +16,18 @@ body {
   font-size: 16px;
   font-family: "Poppins", sans-serif;
 }
+.app {
+  background-color: var(--background-color);
+}
 .components {
-  margin: 1.2rem 1rem;
+  margin: 2rem 1rem;
   display: flex;
   justify-content: space-around;
-  gap: 3px;
+  gap: 1rem;
 }
 
 .MainPost {
-  width: 75%;
+  width: 65%;
   flex-grow: 1;
 }
 
