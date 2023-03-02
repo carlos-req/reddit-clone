@@ -4,5 +4,6 @@
   flex-direction: column;
   gap: 1.5rem;
   width: 100%;
-  background-color: var(--background-color2);
+  background-color: var(--foreground-color);
+  border-radius: 0.25rem;
 }
