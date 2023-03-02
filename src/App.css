@@ -1,8 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;900&display=swap");
-
+:root {
+  --primary-font-color: #444;
+  --secondary-font-color: #717171;
+}
 body {
   margin: 0px;
   padding: 0px;
   font-size: 16px;
   font-family: "Poppins", sans-serif;
+}
+.components {
+  margin: 1.2rem 1rem;
+  display: flex;
+  justify-content: space-around;
+  gap: 3px;
+}
+
+.MainPost {
+  width: 75%;
+  flex-grow: 1;
+}
+
+.Subreddits {
+  width: 25%;
+  flex-grow: 0.5;
 }
