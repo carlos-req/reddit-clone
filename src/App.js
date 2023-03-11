@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import MainPost from "./features/MainPost/MainPost";
+import Posts from "./features/Posts/Posts";
 import NavBar from "./components/NavBar/NavBar";
 import Subreddits from "./features/Subreddits/Subreddits";
 
@@ -10,7 +10,7 @@ function App() {
       <NavBar />
       <div className="components">
         <div className="MainPost">
-          <MainPost />
+          <Posts />
         </div>
         <div className="Subreddits">
           <Subreddits />

@@ -4,8 +4,8 @@ import "./Subreddits.css";
 import { useSelector, useDispatch } from "react-redux";
 import {
   getAllSubreddits,
-  getPostsStatus,
-  getPostsError,
+  getSubredditsStatus,
+  getSubredditsError,
   fetchSubreddits,
 } from "./subredditsSlice";
 
@@ -13,9 +13,10 @@ const Subreddits = () => {
   const dispatch = useDispatch();
 
   const subreddits = useSelector(getAllSubreddits);
-  const srStatus = useSelector(getPostsStatus);
-  // const error = useSelector(getPostsError);
+  const srStatus = useSelector(getSubredditsStatus);
+  // const error = useSelector(getSubredditsError);
 
+  console.log(subreddits);
   useEffect(() => {
     if (srStatus === "idle") {
       dispatch(fetchSubreddits());

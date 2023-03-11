@@ -43,8 +43,8 @@ export const subredditsSlice = createSlice({
 });
 
 export const getAllSubreddits = (state) => state.subreddits.subreddits;
-export const getPostsStatus = (state) => state.subreddits.status;
-export const getPostsError = (state) => state.subreddits.error;
+export const getSubredditsStatus = (state) => state.subreddits.status;
+export const getSubredditsError = (state) => state.subreddits.error;
 
 export const {} = subredditsSlice.actions;
 

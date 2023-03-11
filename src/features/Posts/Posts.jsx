@@ -1,8 +1,8 @@
 import React from "react";
 import PostCard from "../../components/PostCard/PostCard";
-import "./MainPost.css";
+import "./Posts.css";
 
-const MainPost = () => {
+const Post = () => {
   return (
     <div className="postcards">
       <PostCard />
@@ -15,4 +15,4 @@ const MainPost = () => {
   );
 };
 
-export default MainPost;
+export default Post;
