@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import MainPost from "./components/MainPost/MainPost";
+import MainPost from "./features/MainPost/MainPost";
 import NavBar from "./components/NavBar/NavBar";
 import Subreddits from "./components/Subreddits/Subreddits";
 

@@ -12,7 +12,7 @@ const PostCard = () => {
       </div>
       <div className="main-post">
         <h3 className="post-heading">This will be the heading of the post</h3>
-        <img></img>
+        <img atl="Hello"></img>
         <hr className="line" />
         <div className="bottom-post">
           <p className="user">flyingcatwithhorns</p>

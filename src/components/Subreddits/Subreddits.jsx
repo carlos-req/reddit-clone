@@ -1,5 +1,5 @@
 import React from "react";
-import Subreddit from "../Subreddit/Subreddit";
+import Subreddit from "../../features/Subreddit/Subreddit";
 import "./Subreddits.css";
 
 const Subreddits = () => {
