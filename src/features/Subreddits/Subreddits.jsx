@@ -14,7 +14,7 @@ const Subreddits = () => {
 
   const subreddits = useSelector(getAllSubreddits);
   const srStatus = useSelector(getPostsStatus);
-  const error = useSelector(getPostsError);
+  // const error = useSelector(getPostsError);
 
   useEffect(() => {
     if (srStatus === "idle") {
@@ -22,13 +22,23 @@ const Subreddits = () => {
     }
   }, [srStatus, dispatch]);
 
+  const defaultimg =
+    "https://b.thumbs.redditmedia.com/rwN0al9P6nYhGSQO-yIJb-FyF5xg-c2v61zjMom4c4E.png";
+
   return (
     <div className="subreddits">
       <h2>Subreddits</h2>
       <div className="subreddit-single">
-        <Subreddit />
-        <Subreddit />
-        <Subreddit />
+        {subreddits.map((subreddit) => (
+          <Subreddit
+            name={subreddit.display_name}
+            key={`${subreddit.display_name}+${Math.floor(
+              Math.random() * 1000
+            )}`}
+            img={subreddit.icon_img ? subreddit.icon_img : defaultimg}
+            bc={subreddit.primary_color ? subreddit.primary_color : "#46d160"}
+          />
+        ))}
       </div>
     </div>
   );

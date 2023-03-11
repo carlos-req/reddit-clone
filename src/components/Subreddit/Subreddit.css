@@ -1,0 +1,25 @@
+.subreddit {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 0.5rem 0rem;
+  text-align: center;
+  cursor: pointer;
+  padding: 0.8rem;
+  border-radius: 2%;
+}
+.subreddit:hover {
+  background-color: rgba(0, 0, 0, 0.06);
+}
+.icon_img {
+  display: inline-block;
+  border-radius: 100%;
+  width: 1.72rem;
+}
+
+.subreddit-name {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--primary-font-color);
+}
