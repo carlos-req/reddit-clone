@@ -1,11 +1,11 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-const POSTS_URL = "https://www.reddit.com/";
+const POSTS_URL = "https://www.reddit.com";
 
 const initialState = {
   posts: [],
   searchTerm: "",
-  subrparam: "r/Home.json",
+  param: "/r/Home.json",
   status: "idle",
   error: null,
 };
@@ -25,7 +25,7 @@ const postsSlice = createSlice({
       })
       .addCase(fetchPosts.fulfilled, (state, action) => {
         state.status = "succeeded";
-        // state.subreddits = state.subreddits.concat(action.payload);
+        state.posts = state.posts.concat(action.payload);
       })
       .addCase(fetchPosts.rejected, (state, action) => {
         state.status = "failed";
@@ -34,9 +34,24 @@ const postsSlice = createSlice({
   },
 });
 
+export const fetchPosts = createAsyncThunk(
+  "posts/fetchPosts",
+  async (param) => {
+    try {
+      const response = await fetch(`${POSTS_URL}${param}`);
+      const json = await response.json();
+      console.log(json);
+      return json;
+    } catch (err) {
+      return err.message;
+    }
+  }
+);
+
 export const getAllPosts = (state) => state.posts.posts;
 export const getPostsStatus = (state) => state.posts.status;
 export const getPostsError = (state) => state.posts.error;
+//export const getParam = (state) => state.param.param;
 
 export const { changeParam } = postsSlice.actions;
 

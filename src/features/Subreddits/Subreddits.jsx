@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   getAllSubreddits,
   getSubredditsStatus,
-  getSubredditsError,
+  //getSubredditsError,
   fetchSubreddits,
 } from "./subredditsSlice";
 
@@ -16,7 +16,6 @@ const Subreddits = () => {
   const srStatus = useSelector(getSubredditsStatus);
   // const error = useSelector(getSubredditsError);
 
-  console.log(subreddits);
   useEffect(() => {
     if (srStatus === "idle") {
       dispatch(fetchSubreddits());
@@ -30,12 +29,11 @@ const Subreddits = () => {
     <div className="subreddits">
       <h2>Subreddits</h2>
       <div className="subreddit-single">
-        {subreddits.map((subreddit) => (
+        {subreddits.map((subreddit, index) => (
           <Subreddit
             name={subreddit.display_name}
-            key={`${subreddit.display_name}+${Math.floor(
-              Math.random() * 1000
-            )}`}
+            key={index}
+            lol={index}
             img={subreddit.icon_img ? subreddit.icon_img : defaultimg}
             bc={subreddit.primary_color ? subreddit.primary_color : "#46d160"}
           />
