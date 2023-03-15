@@ -15,6 +15,7 @@ const Subreddits = () => {
   const subreddits = useSelector(getAllSubreddits);
   const srStatus = useSelector(getSubredditsStatus);
   // const error = useSelector(getSubredditsError);
+  console.log(subreddits);
 
   useEffect(() => {
     if (srStatus === "idle") {
@@ -31,9 +32,9 @@ const Subreddits = () => {
       <div className="subreddit-single">
         {subreddits.map((subreddit, index) => (
           <Subreddit
+            url={subreddit.display_name_prefixed}
             name={subreddit.display_name}
             key={index}
-            lol={index}
             img={subreddit.icon_img ? subreddit.icon_img : defaultimg}
             bc={subreddit.primary_color ? subreddit.primary_color : "#46d160"}
           />

@@ -23,3 +23,7 @@
   font-weight: 600;
   color: var(--primary-font-color);
 }
+
+.selected {
+  background-color: aqua;
+}

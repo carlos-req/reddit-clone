@@ -1,37 +1,41 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import PostCard from "../../components/PostCard/PostCard";
 import "./Posts.css";
 import { useSelector, useDispatch } from "react-redux";
-import {
-  //getParam,
-  getAllPosts,
-  getPostsStatus,
-  getPostsErrror,
-  fetchPosts,
-} from "./postsSlice";
+import { getAllPosts, fetchPosts, clearPosts } from "./postsSlice";
+
 const Post = () => {
   const dispatch = useDispatch();
   const posts = useSelector(getAllPosts);
   const param = useSelector((state) => state.posts.param);
-  // const param = useSelector(getParam);
-  // console.log(param);
-  const postsStatus = useSelector(getPostsStatus);
-  // const error = useSelector(getSubredditsError);
+
+  console.log(posts);
+  let count = 0;
 
   useEffect(() => {
-    if (postsStatus === "idle") {
-      dispatch(fetchPosts(param));
+    if (count > 0) {
+      return;
+    } else {
+      count++;
     }
-  }, [postsStatus, dispatch]);
+    dispatch(clearPosts());
+    dispatch(fetchPosts(param));
+  }, [param, dispatch, count]);
 
   return (
     <div className="postcards">
-      <PostCard />
-      <PostCard />
-      <PostCard />
-      <PostCard />
-      <PostCard />
-      <PostCard />
+      {posts.map((post, index) => (
+        <PostCard
+          time={post.data.created_utc}
+          title={post.data.title}
+          user={post.data.author}
+          key={index}
+          ups={post.data.ups}
+          text={post.data.selftext}
+          numComs={post.data.num_comments}
+          img={post.data.url}
+        />
+      ))}
     </div>
   );
 };

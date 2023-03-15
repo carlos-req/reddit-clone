@@ -53,3 +53,11 @@
   align-items: center;
   gap: 0.2rem;
 }
+.post-img-container {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.post-img {
+  width: 100%;
+}
