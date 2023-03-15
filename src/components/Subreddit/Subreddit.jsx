@@ -1,21 +1,14 @@
 import React from "react";
 import "./Subreddit.css";
-import {
-  changeParam,
-  clearPosts,
-  fetchPosts,
-} from "../../features/Posts/postsSlice";
-import { useDispatch, useSelector } from "react-redux";
+import { changeParam } from "../../features/Posts/postsSlice";
+import { useDispatch } from "react-redux";
 
 const Subreddit = (props) => {
   const { name, img, bc, url } = props;
   const dispatch = useDispatch();
-  const param = useSelector((state) => state.posts.param);
 
   const handleClick = () => {
-    dispatch(clearPosts());
     dispatch(changeParam(`/${url}.json`));
-    dispatch(fetchPosts(param));
   };
 
   return (

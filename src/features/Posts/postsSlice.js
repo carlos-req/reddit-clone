@@ -30,8 +30,9 @@ const postsSlice = createSlice({
   reducers: {
     changeParam: (state, action) => {
       state.param = action.payload;
+      state.status = "idle";
     },
-    clearPosts: (state, action) => {
+    clearPosts: (state) => {
       state.posts = [];
       console.log(state.posts);
     },
@@ -43,7 +44,7 @@ const postsSlice = createSlice({
       })
       .addCase(fetchPosts.fulfilled, (state, action) => {
         state.status = "succeeded";
-        state.posts = state.posts.concat(action.payload);
+        state.posts = action.payload;
       })
       .addCase(fetchPosts.rejected, (state, action) => {
         state.status = "failed";
@@ -56,6 +57,6 @@ export const getAllPosts = (state) => state.posts.posts;
 export const getPostsStatus = (state) => state.posts.status;
 export const getPostsError = (state) => state.posts.error;
 
-export const { changeParam, clearPosts } = postsSlice.actions;
+export const { changeParam, clearPosts, changeStatus } = postsSlice.actions;
 
 export default postsSlice.reducer;

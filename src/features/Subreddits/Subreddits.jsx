@@ -2,26 +2,22 @@ import React, { useEffect } from "react";
 import Subreddit from "../../components/Subreddit/Subreddit";
 import "./Subreddits.css";
 import { useSelector, useDispatch } from "react-redux";
-import {
-  getAllSubreddits,
-  getSubredditsStatus,
-  //getSubredditsError,
-  fetchSubreddits,
-} from "./subredditsSlice";
+import { getAllSubreddits, fetchSubreddits } from "./subredditsSlice";
 
 const Subreddits = () => {
   const dispatch = useDispatch();
-
   const subreddits = useSelector(getAllSubreddits);
-  const srStatus = useSelector(getSubredditsStatus);
-  // const error = useSelector(getSubredditsError);
-  console.log(subreddits);
 
+  // Making sure Subreddits are only fetched once
+  let count = 0;
   useEffect(() => {
-    if (srStatus === "idle") {
+    if (count < 1) {
       dispatch(fetchSubreddits());
+      count++;
+    } else {
+      return;
     }
-  }, [srStatus, dispatch]);
+  }, [count, dispatch]);
 
   const defaultimg =
     "https://b.thumbs.redditmedia.com/rwN0al9P6nYhGSQO-yIJb-FyF5xg-c2v61zjMom4c4E.png";

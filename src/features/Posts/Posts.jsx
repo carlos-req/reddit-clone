@@ -2,25 +2,19 @@ import React, { useEffect } from "react";
 import PostCard from "../../components/PostCard/PostCard";
 import "./Posts.css";
 import { useSelector, useDispatch } from "react-redux";
-import { getAllPosts, fetchPosts, clearPosts } from "./postsSlice";
+import { getAllPosts, fetchPosts, getPostsStatus } from "./postsSlice";
 
 const Post = () => {
   const dispatch = useDispatch();
   const posts = useSelector(getAllPosts);
   const param = useSelector((state) => state.posts.param);
-
-  console.log(posts);
-  let count = 0;
+  const postsStatus = useSelector(getPostsStatus);
 
   useEffect(() => {
-    if (count > 0) {
-      return;
-    } else {
-      count++;
+    if (postsStatus === "idle") {
+      dispatch(fetchPosts(param));
     }
-    dispatch(clearPosts());
-    dispatch(fetchPosts(param));
-  }, [param, dispatch, count]);
+  }, [param, dispatch, postsStatus]);
 
   return (
     <div className="postcards">
