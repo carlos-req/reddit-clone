@@ -61,3 +61,41 @@
 .post-img {
   width: 100%;
 }
+
+@media screen and (max-width: 389px) {
+  .post-card {
+    padding: 1rem 0rem;
+    display: flex;
+    gap: 0.5rem;
+  }
+  .main-post {
+    width: 75%;
+    overflow: auto;
+    white-space: wrap;
+  }
+  .post-heading {
+    font-weight: 600;
+    color: var(--primary-font-color);
+  }
+
+  .line {
+    margin: 0.75rem 0rem 1rem;
+  }
+  /* Bottom Section */
+  .bottom-post {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: var(--secondary-font-color);
+  }
+  .user {
+    color: blue;
+  }
+
+  .comments-count {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.2rem;
+  }
+}
