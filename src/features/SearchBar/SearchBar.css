@@ -17,3 +17,9 @@ input {
 .input-search {
   margin-right: 0.75rem;
 }
+
+@media screen and (max-width: 520px) {
+  .input-search {
+    margin: 0;
+  }
+}

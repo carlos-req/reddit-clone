@@ -34,3 +34,17 @@ header {
 .search-component {
   margin-right: 2rem;
 }
+
+@media screen and (max-width: 520px) {
+  .nav {
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  header {
+    height: 80px;
+  }
+  .search-component {
+    margin-right: 0;
+  }
+}

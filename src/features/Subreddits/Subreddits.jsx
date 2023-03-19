@@ -1,13 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Subreddit from "../../components/Subreddit/Subreddit";
 import "./Subreddits.css";
 import { useSelector, useDispatch } from "react-redux";
 import { getAllSubreddits, fetchSubreddits } from "./subredditsSlice";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const Subreddits = () => {
   const dispatch = useDispatch();
   const subreddits = useSelector(getAllSubreddits);
-
   // Making sure Subreddits are only fetched once
   let count = 0;
   useEffect(() => {

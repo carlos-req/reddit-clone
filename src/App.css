@@ -35,3 +35,15 @@ body {
   width: 25%;
   flex-grow: 0.5;
 }
+
+@media screen and (max-width: 760px) {
+  .components {
+    flex-wrap: wrap;
+  }
+  .Subreddits {
+    width: 100%;
+  }
+  .MainPost {
+    width: 100%;
+  }
+}

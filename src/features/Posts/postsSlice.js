@@ -36,6 +36,11 @@ const postsSlice = createSlice({
       state.posts = [];
       console.log(state.posts);
     },
+    setSearch: (state, action) => {
+      state.searchTerm = action.payload;
+      state.param = `search.json?q=` + action.payload;
+      state.status = "idle";
+    },
   },
   extraReducers(builder) {
     builder
@@ -57,6 +62,7 @@ export const getAllPosts = (state) => state.posts.posts;
 export const getPostsStatus = (state) => state.posts.status;
 export const getPostsError = (state) => state.posts.error;
 
-export const { changeParam, clearPosts, changeStatus } = postsSlice.actions;
+export const { changeParam, clearPosts, changeStatus, setSearch } =
+  postsSlice.actions;
 
 export default postsSlice.reducer;
